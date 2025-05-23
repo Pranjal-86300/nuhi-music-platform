@@ -200,9 +200,7 @@ body {
 /* Responsive Design - Stack on Smaller Screens */
 @media screen and (max-width: 768px) {
    
-    .music-player {
-        margin-left: 100px;
-        margin-right: 100px; /* Uses more screen space when margins would be too much */
+    .music-player { /* Uses more screen space when margins would be too much */
         min-width: 400px; /* Still maintains minimum width */
     }
 
