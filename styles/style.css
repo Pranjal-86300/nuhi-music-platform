@@ -201,6 +201,8 @@ body {
 @media screen and (max-width: 768px) {
    
     .music-player { /* Uses more screen space when margins would be too much */
+        left:5px;
+        right:5px;
         min-width: 400px; /* Still maintains minimum width */
     }
 
