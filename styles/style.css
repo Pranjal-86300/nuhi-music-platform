@@ -1,0 +1,302 @@
+
+:root {
+    --primary-color: #0077ff;  /* Light Blue */
+    --accent-glow: rgba(0, 119, 255, 0.7); /* Light Blue Glow */
+}
+/* RESET DEFAULT STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: white;
+    text-align: center;
+}
+
+/* HEADER */
+.header {
+    padding: 30px;
+    
+    background: linear-gradient(135deg, var(--primary-color), #3399ff);
+    border-bottom: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* HERO SECTION */
+/* HERO SECTION */
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, blue, red);
+}
+
+/* Title */
+.hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 5px 20px rgba(0, 119, 255, 0.4);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Subtitle */
+.hero-subtitle {
+    font-size: 1.6rem;
+    color: white;
+    margin-top: 15px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Featured Track */
+.featured-track {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    animation: slideIn 1.5s ease-in-out;
+}
+
+.track-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.track-description {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 10px;
+}
+
+/* Call-to-Action Button */
+.explore-btn {
+    margin-top: 40px;
+    background: white;
+    color: #0077ff;
+    padding: 14px 28px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-btn:hover {
+    background: #0077ff;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* MUSIC PLAYER */
+/* MUSIC PLAYER - IMPROVED SIZING */
+.music-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+/* Individual Music Cards */
+.song {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px var(--accent-glow);
+    padding-top: 35px;
+    margin: 10px;
+    border-radius: 12px;
+    width: 40%; /* Covers nearly half the screen on larger devices */
+}
+
+/* Album Covers - Bigger & More Eye-Catching */
+.album-cover {
+    width: 350px;
+    height: 350px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px var(--accent-glow);
+}
+
+/* Audio Player - Larger & More Visible */
+/* Make the progress bar fully blue */
+.audio-player::-webkit-media-controls-panel {
+    background-color: transparent !important;
+}
+
+.audio-player::-webkit-media-controls-play-button {
+    filter: brightness(0.9);
+}
+
+.audio-player::-webkit-media-controls-current-time-display,
+.audio-player::-webkit-media-controls-time-remaining-display {
+    color: white !important;
+}
+
+/* Hide the default progress bar */
+.audio-player::-webkit-media-controls-progress-bar {
+    display: none;
+}
+
+/* Custom Progress Bar */
+.audio-player::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 5px;
+    position: absolute;
+    bottom: 10px;
+}
+.audio-player::-webkit-media-controls-current-time-display,
+.audio-player::-webkit-media-controls-time-remaining-display {
+    color: #0077ff !important; /* Light Blue for better visibility */
+    font-weight: bold;
+}
+
+/* Fix the Progress Bar Background */
+.audio-player::-webkit-media-controls-progress-bar {
+    background: #0077ff !important; /* Light blue bar */
+}
+.song h2{
+    margin: 30px;
+    color: var(--primary-color);
+}
+
+
+/* Responsive Design - Stack on Smaller Screens */
+@media screen and (max-width: 768px) {
+    .music-player {
+        flex-direction: column;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .song {
+        width: 100%;
+    }
+
+    .album-cover {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* VISUALS */
+#visuals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    z-index: -1;
+    overflow: hidden;
+}
+
+
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* FOOTER */
+.footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: linear-gradient(135deg, blue, red);
+    font-weight: bold;
+}
+
+/* General Animations */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover Effects for Music Cards */
+.song {
+    transition: transform 0.3s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.song:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+/* Button Hover Effects */
+.explore-btn {
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* Audio Player Animation */
+.audio-player {
+    transition: background 0.3s ease-in-out;
+}
+
+.audio-player:hover {
+    background: #0055aa;
+}
+
+/* Smooth Entry for Hero Section */
+.hero-container {
+    animation: slideIn 1.2s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle Pulse for Album Covers */
+.album-cover {
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.album-cover:hover {
+    box-shadow: 0 0 35px var(--accent-glow);
+}

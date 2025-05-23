@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUHI Digital Soundscape</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+
+<!-- HERO SECTION -->
+<section id="hero">
+    <div class="hero-container">
+        <h1 class="hero-title">NUHI Digital Soundscape</h1>
+        <p class="hero-subtitle">Experience the fusion of visuals and sound like never before.</p>
+
+        <div class="featured-track">
+            <h2 class="track-name">Featured Track: Can't Trust Myself</h2>
+            <p class="track-description">A sonic journey into self-reflection and raw emotion.</p>
+        </div>
+
+        <button class="explore-btn">Explore Now</button>
+    </div>
+</section>
+
+
+    <!-- MUSIC PLAYER SECTION -->
+    <section id="music-section">
+    <div class="music-player">
+        <div class="song">
+            <img src="assets/images/cover1.jpeg" class="album-cover" alt="Cant Trust Myself Cover">
+            <h2 class="track-title">Can't Trust Myself</h3>
+            <audio id="song1" class="audio-player" controls>
+                <source src="assets/audio/CantTrustMyself.mp3" type="audio/mp3">
+            </audio>
+        </div>
+
+        <div class="song">
+            <img src="assets/images/cover2.jpg" class="album-cover" alt="Summer Hits Different Cover">
+            <h2 class="track-title">Summer Hits Different</h3>
+            <audio id="song2" class="audio-player" controls>
+                <source src="assets/audio/SummerHitsDifferent.mp3" type="audio/mp3">
+            </audio>
+        </div>
+    </div>
+</section>
+
+    <!-- VISUALS SECTION -->
+    <div id="visuals">
+        <canvas id="threejs-canvas"></canvas>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 NUHI Digital Soundscape | All Rights Reserved</p>
+    </footer>
+
+    <!-- SCRIPT FILES -->
+    <script src="js/main.js"></script>
+    <script src="js/player.js"></script>
+    <script type="module" src="js/visuals.js"></script>
+
+
+</body>
+</html>
